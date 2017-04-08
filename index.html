@@ -1,0 +1,147 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>chessGame</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="hero-unit">
+        <h3 id="color-to-move"><span>White</span> player turn.</h3>
+        <div id="check-message"></div>
+        <table>
+            <tr>
+                <td><span data-color="white" data-type="rook" data-count="1" draggable="true">&#9814;</span></td>
+                <td><span data-color="white" data-type="knight" data-count="1" draggable="true">&#9816;</span></td>
+                <td><span data-color="white" data-type="bishop" data-count="1" draggable="true">&#9815;</span></td>
+                <td><span data-color="white" data-type="king" data-count="1" draggable="true">&#9812;</span></td>
+                <td><span data-color="white" data-type="queen" data-count="1" draggable="true">&#9813;</span></td>
+                <td><span data-color="white" data-type="bishop" data-count="2" draggable="true">&#9815;</span></td>
+                <td><span data-color="white" data-type="knight" data-count="2" draggable="true">&#9816;</span></td>
+                <td><span data-color="white" data-type="rook" data-count="2" draggable="true">&#9814;</span></td>
+            </tr>
+            <tr>
+                <td><span data-color="white" data-type="pawn" data-count="1" draggable="true">&#9817;</span></td>
+                <td><span data-color="white" data-type="pawn" data-count="2" draggable="true">&#9817;</span></td>
+                <td><span data-color="white" data-type="pawn" data-count="3" draggable="true">&#9817;</span></td>
+                <td><span data-color="white" data-type="pawn" data-count="4" draggable="true">&#9817;</span></td>
+                <td><span data-color="white" data-type="pawn" data-count="5" draggable="true">&#9817;</span></td>
+                <td><span data-color="white" data-type="pawn" data-count="6" draggable="true">&#9817;</span></td>
+                <td><span data-color="white" data-type="pawn" data-count="7" draggable="true">&#9817;</span></td>
+                <td><span data-color="white" data-type="pawn" data-count="8" draggable="true">&#9817;</span></td>
+            </tr>
+            <tr>
+                <td class="dropzone"></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+            </tr>
+            <tr>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+            </tr>
+            <tr>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+            </tr>
+            <tr>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+            </tr>
+            <tr>
+                <td ><span data-color="black" data-type="pawn" data-count="1" draggable="true">&#9823;</span></td>
+                <td ><span data-color="black" data-type="pawn" data-count="2" draggable="true">&#9823;</span></td>
+                <td ><span data-color="black" data-type="pawn" data-count="3" draggable="true">&#9823;</span></td>
+                <td ><span data-color="black" data-type="pawn" data-count="4" draggable="true">&#9823;</span></td>
+                <td ><span data-color="black" data-type="pawn" data-count="5" draggable="true">&#9823;</span></td>
+                <td ><span data-color="black" data-type="pawn" data-count="6" draggable="true">&#9823;</span></td>
+                <td ><span data-color="black" data-type="pawn" data-count="7" draggable="true">&#9823;</span></td>
+                <td ><span data-color="black" data-type="pawn" data-count="8" draggable="true">&#9823;</span></td>
+            </tr>
+            <tr>
+                <td ><span data-color="black" data-type="rook" data-count="1" draggable="true">&#9820;</span></td>
+                <td ><span data-color="black" data-type="knight" data-count="1" draggable="true">&#9822;</span></td>
+                <td ><span data-color="black" data-type="bishop" data-count="1" draggable="true">&#9821;</span></td>
+                <td ><span data-color="black" data-type="king" data-count="1" draggable="true">&#9818;</span></td>
+                <td ><span data-color="black" data-type="queen" data-count="1" draggable="true">&#9819;</span></td>
+                <td ><span data-color="black" data-type="bishop" data-count="2" draggable="true">&#9821;</span></td>
+                <td ><span data-color="black" data-type="knight" data-count="2" draggable="true">&#9822;</span></td>
+                <td ><span data-color="black" data-type="rook" data-count="2" draggable="true">&#9820;</span></td>
+            </tr>
+        
+        </table>
+    </div>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/general.js"></script>
+    <script src="scripts/chessboard.js"></script>
+    <script src="scripts/pawn.js"></script>
+    <script src="scripts/bishop.js"></script>
+    <script src="scripts/knight.js"></script>
+    <script src="scripts/rook.js"></script>
+    <script src="scripts/queen.js"></script>
+    <script src="scripts/king.js"></script>
+    <script src="scripts/main.js"></script>
+    
+
+    <!-- endbuild -->
+  </body>
+</html>
